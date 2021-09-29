@@ -54,7 +54,19 @@
 .review {
   text-align: center;
 }
-
+.review-card {
+  transition: 0.4s;
+}
+.review-card:hover {
+  transition: 0.4s;
+  transform: scale(1.05);
+}
+.carousel-caption h5 {
+  display: none;
+}
+.carousel-caption p {
+  display: none;
+}
 .card-custom-avatar img {
   border-radius: 50%;
   box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);

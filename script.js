@@ -21,9 +21,10 @@ const addReview = () => {
     saveLocalstorage();
 
 }
+
 const generateReviewPost = ({id,reviewerName,movieName,poster,genre,rating,review}) => {
     return (`
-    <div class="col-md-6 col-lg-4 pb-3" id=${id} key=${id}>
+    <div class="col-md-6 col-lg-4 pb-3 review-card" id=${id} key=${id}>
      <div class="card card-custom bg-white border-white border-0">
     <div class="card-custom-img" style="background-image: url(${poster});" name=${poster}></div>
     <div class="card-custom-avatar">
@@ -69,6 +70,7 @@ const deleteReview = (e) => {
 }
 const editReview = (e) => {
    e.parentNode.childNodes[1].innerHTML="Save";
+   console.log(e.childNodes);
    e.parentNode.childNodes[1].setAttribute("onclick","saveEditReview(this)");
    //console.log(e.parentNode.parentNode.childNodes[5].childNodes);
    //movie name
@@ -89,7 +91,7 @@ const editReview = (e) => {
   e.parentNode.parentNode.childNodes[5].parentNode.childNodes[3].childNodes[3].childNodes[1].setAttribute("contenteditable","true");
   //poster
   var posterurl = e.parentNode.parentNode.childNodes[5].parentNode.childNodes[1].style.backgroundImage.slice(4, -1).replace(/"/g, ""); 
-  console.log(posterurl)
+
   
 }
 
