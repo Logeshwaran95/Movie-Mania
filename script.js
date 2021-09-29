@@ -11,10 +11,12 @@ const addReview = () => {
         reviewerName: document.getElementById("personName").value,
         movieName: document.getElementById("movieName").value,
         poster:document.getElementById("moviePoster").value,
+        trailer:document.getElementById("movieTrailer").value,
         genre: document.getElementById("genre").value,
         rating:document.getElementById("rating").value,
         review:document.getElementById("review").value
     };
+    
     document.getElementById("reviewsRow").insertAdjacentHTML('beforeend', generateReviewPost(reviewDetails));
     reviewData.push(reviewDetails);
     console.log(reviewData);
@@ -22,7 +24,7 @@ const addReview = () => {
 
 }
 
-const generateReviewPost = ({id,reviewerName,movieName,poster,genre,rating,review}) => {
+const generateReviewPost = ({id,reviewerName,movieName,poster,trailer,genre,rating,review}) => {
     return (`
     <div class="col-md-6 col-lg-4 pb-3 review-card" id=${id} key=${id}>
      <div class="card card-custom bg-white border-white border-0">
@@ -44,7 +46,7 @@ const generateReviewPost = ({id,reviewerName,movieName,poster,genre,rating,revie
       <button type="button" class="btn btn-outline-danger" name=${id} onclick="deleteReview(this)">
       <i class="far fa-trash-alt" name=${id} onclick="deleteReview(this)"></i>
   </button>
-      <a href="#" class="btn btn-outline-primary">Watch Trailer</a>
+      <a href="${trailer}" class="btn btn-outline-primary">Watch Trailer</a>
     </div>
   </div>
   </div>`)
