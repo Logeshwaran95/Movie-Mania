@@ -72,7 +72,7 @@ const deleteReview = (e) => {
 }
 const editReview = (e) => {
    e.parentNode.childNodes[1].innerHTML="Save";
-   console.log(e.childNodes);
+  //  console.log(e.childNodes);
    e.parentNode.childNodes[1].setAttribute("onclick","saveEditReview(this)");
    //console.log(e.parentNode.parentNode.childNodes[5].childNodes);
    //movie name
@@ -85,9 +85,10 @@ const editReview = (e) => {
    //console.log(e.parentNode.parentNode.childNodes[5].childNodes[7]);
    e.parentNode.parentNode.childNodes[5].childNodes[7].setAttribute("contenteditable","true");
   //rating
-  console.log(e.parentNode.parentNode.childNodes[5].parentNode.childNodes[5].childNodes[5].childNodes[1].innerHTML);
+  // console.log(e.parentNode.parentNode.childNodes[5].parentNode.childNodes[5].childNodes[5].childNodes[1].innerHTML);
   e.parentNode.parentNode.childNodes[5].parentNode.childNodes[5].childNodes[5].childNodes[1].setAttribute("contenteditable","true");
-
+   //trailer
+  //  console.log(e.parentNode.parentNode.childNodes[7].childNodes[5].getAttribute("href"));
    //reveiwer name
    //console.log(e.parentNode.parentNode.childNodes[5].parentNode.childNodes[3].childNodes[3].childNodes[1].innerHTML);
   e.parentNode.parentNode.childNodes[5].parentNode.childNodes[3].childNodes[3].childNodes[1].setAttribute("contenteditable","true");
@@ -105,16 +106,18 @@ const saveEditReview = (e) => {
     reviewerName: e.parentNode.parentNode.childNodes[5].parentNode.childNodes[3].childNodes[3].childNodes[1].innerHTML,
     movieName: e.parentNode.parentNode.childNodes[5].childNodes[1].innerHTML,
     poster:e.parentNode.parentNode.childNodes[5].parentNode.childNodes[1].style.backgroundImage.slice(4, -1).replace(/"/g, ""), 
+    trailer:e.parentNode.parentNode.childNodes[7].childNodes[5].getAttribute("href"),
     genre: e.parentNode.parentNode.childNodes[5].childNodes[3].innerHTML,
     rating:e.parentNode.parentNode.childNodes[5].parentNode.childNodes[5].childNodes[5].childNodes[1].innerHTML,
     review:e.parentNode.parentNode.childNodes[5].childNodes[7].innerHTML
   }
-  console.log(updatedReviewDetails.genre);
-  console.log(updatedReviewDetails.reviewerName);
-  console.log(updatedReviewDetails.movieName);
-  console.log(updatedReviewDetails.rating);
-  console.log(updatedReviewDetails.review);
-  console.log(updatedReviewDetails.poster);
+  console.log(updatedReviewDetails.trailer);
+  // console.log(updatedReviewDetails.genre);
+  // console.log(updatedReviewDetails.reviewerName);
+  // console.log(updatedReviewDetails.movieName);
+  // console.log(updatedReviewDetails.rating);
+  // console.log(updatedReviewDetails.review);
+  // console.log(updatedReviewDetails.poster);
 
   var len = reviewData.length;
    
@@ -127,7 +130,7 @@ const saveEditReview = (e) => {
     reviewData[index]=updatedReviewDetails;
     //console.log(globalTaskData[index]);
     saveLocalstorage();
-    window.location.reload();   
+    // window.location.reload();   
 }
 
 const searchMovie = () => {
