@@ -111,7 +111,7 @@ const saveEditReview = (e) => {
     rating:e.parentNode.parentNode.childNodes[5].parentNode.childNodes[5].childNodes[5].childNodes[1].innerHTML,
     review:e.parentNode.parentNode.childNodes[5].childNodes[7].innerHTML
   }
-  console.log(updatedReviewDetails.trailer);
+  //console.log(updatedReviewDetails.trailer);
   // console.log(updatedReviewDetails.genre);
   // console.log(updatedReviewDetails.reviewerName);
   // console.log(updatedReviewDetails.movieName);
