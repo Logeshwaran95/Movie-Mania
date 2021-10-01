@@ -130,7 +130,7 @@ const saveEditReview = (e) => {
     reviewData[index]=updatedReviewDetails;
     //console.log(globalTaskData[index]);
     saveLocalstorage();
-    // window.location.reload();   
+    window.location.reload();   
 }
 
 const searchMovie = () => {
